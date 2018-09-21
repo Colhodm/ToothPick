@@ -13,6 +13,11 @@ class landingpage: UIViewController {
     var distance: Int!
     var numPeople: Int!
     var personTwo : String!
+    var personThree : String!
+    var personFour : String!
+    var personFive : String!
+    var personSix : String!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -25,6 +30,11 @@ class landingpage: UIViewController {
             vc.numPeople = numPeople
             vc.personOne = personOne
             vc.personTwo = personTwo
+            vc.personThree = personThree
+            vc.personFour = personFour
+            vc.personFive = personFive
+            vc.personSix = personSix
+            
         }
     }
     override func didReceiveMemoryWarning() {

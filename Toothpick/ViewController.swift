@@ -30,8 +30,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     {
         if let vc = segue.destination as? page2
         {
-            vc.distance = Int(firstBox.text!)!
-            vc.numPeople = Int(secondBox.text!)!
+            vc.numPeople = Int(firstBox.text!)!
+            vc.distance = Int(secondBox.text!)!
         }
     }
 

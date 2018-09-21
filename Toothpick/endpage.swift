@@ -19,6 +19,10 @@ class endpage: UIViewController {
     var distance: Int!
     var numPeople: Int!
     var personTwo : String!
+    var personThree : String!
+    var personFour : String!
+    var personFive : String!
+    var personSix : String!
  
     
     
@@ -36,9 +40,13 @@ class endpage: UIViewController {
             case 1:
             restChoice.text = personTwo
             case 2:
-            print("stuff")
+            restChoice.text = personThree
             case 3:
-            print("another")
+            restChoice.text = personFour
+            case 4:
+            restChoice.text = personFive
+            case 5:
+            restChoice.text = personSix
         default:
             print("stuff")
         }

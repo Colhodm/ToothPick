@@ -22,6 +22,10 @@
 		89DDB182214B293A00F4F2E0 /* Endingpage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 89DDB181214B293A00F4F2E0 /* Endingpage.jpg */; };
 		89E55ED62153635000F9C7BD /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E55ED52153635000F9C7BD /* MapViewController.swift */; };
 		89E55ED7215460A800F9C7BD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89DDB153214AD5BA00F4F2E0 /* Info.plist */; };
+		89E55EDB2154C00000F9C7BD /* personthree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E55EDA2154BFFF00F9C7BD /* personthree.swift */; };
+		89E55EDD2154C2A800F9C7BD /* personfour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E55EDC2154C2A800F9C7BD /* personfour.swift */; };
+		89E55EDF2154C56C00F9C7BD /* personfive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E55EDE2154C56C00F9C7BD /* personfive.swift */; };
+		89E55EE12154C6DA00F9C7BD /* personsix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E55EE02154C6DA00F9C7BD /* personsix.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +70,10 @@
 		89DDB17F214B280E00F4F2E0 /* endpage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = endpage.swift; sourceTree = "<group>"; };
 		89DDB181214B293A00F4F2E0 /* Endingpage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Endingpage.jpg; sourceTree = "<group>"; };
 		89E55ED52153635000F9C7BD /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		89E55EDA2154BFFF00F9C7BD /* personthree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = personthree.swift; sourceTree = "<group>"; };
+		89E55EDC2154C2A800F9C7BD /* personfour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = personfour.swift; sourceTree = "<group>"; };
+		89E55EDE2154C56C00F9C7BD /* personfive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = personfive.swift; sourceTree = "<group>"; };
+		89E55EE02154C6DA00F9C7BD /* personsix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = personsix.swift; sourceTree = "<group>"; };
 		9574D378F7A273DB28255AAA /* Pods-ToothpickTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToothpickTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ToothpickTests/Pods-ToothpickTests.debug.xcconfig"; sourceTree = "<group>"; };
 		99C43F7B191310D73DE3B70C /* Pods-Toothpick.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Toothpick.release.xcconfig"; path = "Pods/Target Support Files/Pods-Toothpick/Pods-Toothpick.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,6 +133,10 @@
 				89DDB175214B1ADF00F4F2E0 /* page2.swift */,
 				89DDB17D214B231800F4F2E0 /* toothpick.jpg */,
 				89DDB179214B1FFF00F4F2E0 /* page3.swift */,
+				89E55EDA2154BFFF00F9C7BD /* personthree.swift */,
+				89E55EDC2154C2A800F9C7BD /* personfour.swift */,
+				89E55EDE2154C56C00F9C7BD /* personfive.swift */,
+				89E55EE02154C6DA00F9C7BD /* personsix.swift */,
 				89DDB181214B293A00F4F2E0 /* Endingpage.jpg */,
 				89DDB17B214B215A00F4F2E0 /* landingpage.swift */,
 				89DDB17F214B280E00F4F2E0 /* endpage.swift */,
@@ -391,9 +403,13 @@
 				89DDB14A214AD5B800F4F2E0 /* ViewController.swift in Sources */,
 				89DDB148214AD5B800F4F2E0 /* AppDelegate.swift in Sources */,
 				89DDB17A214B1FFF00F4F2E0 /* page3.swift in Sources */,
+				89E55EE12154C6DA00F9C7BD /* personsix.swift in Sources */,
+				89E55EDB2154C00000F9C7BD /* personthree.swift in Sources */,
 				89DDB176214B1ADF00F4F2E0 /* page2.swift in Sources */,
+				89E55EDD2154C2A800F9C7BD /* personfour.swift in Sources */,
 				89DDB180214B280E00F4F2E0 /* endpage.swift in Sources */,
 				89E55ED62153635000F9C7BD /* MapViewController.swift in Sources */,
+				89E55EDF2154C56C00F9C7BD /* personfive.swift in Sources */,
 				89DDB17C214B215A00F4F2E0 /* landingpage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
