@@ -770,7 +770,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xqv-8f-5Bq" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -846,8 +846,16 @@
                                     <color key="titleColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kPd-Wr-CdG">
+                                <rect key="frame" x="107" y="332" width="161" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.2357332721" green="0.90300259029999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dea-KW-S0Z">
-                                <rect key="frame" x="107" y="282" width="161" height="50.5"/>
+                                <rect key="frame" x="107" y="281" width="161" height="50.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="What would you like?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGa-av-3M0">
@@ -862,6 +870,9 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="finishedTyping:" destination="E0L-0C-cPZ" eventType="editingDidEnd" id="GcZ-p6-AZb"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -873,6 +884,7 @@
                         <viewLayoutGuide key="safeArea" id="gyr-uL-Xjr"/>
                     </view>
                     <connections>
+                        <outlet property="myOptions" destination="kPd-Wr-CdG" id="acP-r6-owV"/>
                         <outlet property="personOne" destination="RMh-hG-sJF" id="6mR-Wh-i3P"/>
                     </connections>
                 </viewController>
@@ -968,6 +980,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="DK6-Qa-iUB"/>
         <segue reference="9vC-zt-uQs"/>
-        <segue reference="n62-vC-oXt"/>
+        <segue reference="Kwy-uo-8Wm"/>
     </inferredMetricsTieBreakers>
 </document>

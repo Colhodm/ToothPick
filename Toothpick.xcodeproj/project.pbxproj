@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89386D7921648B83004767CB /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89386D7821648B83004767CB /* ExternalAccessory.framework */; };
 		89DDB148214AD5B800F4F2E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DDB147214AD5B800F4F2E0 /* AppDelegate.swift */; };
 		89DDB14A214AD5B800F4F2E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DDB149214AD5B800F4F2E0 /* ViewController.swift */; };
 		89DDB14D214AD5B800F4F2E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89DDB14B214AD5B800F4F2E0 /* Main.storyboard */; };
@@ -46,10 +47,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0C9F2D5A92E398F1AE8FB449 /* Pods-Toothpick.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Toothpick.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Toothpick/Pods-Toothpick.debug.xcconfig"; sourceTree = "<group>"; };
-		1DA22C451B8C7F483B258C9E /* Pods-ToothpickTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToothpickTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ToothpickTests/Pods-ToothpickTests.release.xcconfig"; sourceTree = "<group>"; };
-		7009B3D59B81DB2B2DE5850C /* Pods-ToothpickUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToothpickUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ToothpickUITests/Pods-ToothpickUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		7BC8884EE49597CEE5A917C3 /* Pods-ToothpickUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToothpickUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ToothpickUITests/Pods-ToothpickUITests.release.xcconfig"; sourceTree = "<group>"; };
+		570801F2EB2ADF9A07D5BF4B /* Pods-ToothpickTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToothpickTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ToothpickTests/Pods-ToothpickTests.release.xcconfig"; sourceTree = "<group>"; };
+		89386D7721648B7A004767CB /* Toothpick.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Toothpick.entitlements; sourceTree = "<group>"; };
+		89386D7821648B83004767CB /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		89DDB144214AD5B800F4F2E0 /* Toothpick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Toothpick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89DDB147214AD5B800F4F2E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89DDB149214AD5B800F4F2E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,8 +74,11 @@
 		89E55EDC2154C2A800F9C7BD /* personfour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = personfour.swift; sourceTree = "<group>"; };
 		89E55EDE2154C56C00F9C7BD /* personfive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = personfive.swift; sourceTree = "<group>"; };
 		89E55EE02154C6DA00F9C7BD /* personsix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = personsix.swift; sourceTree = "<group>"; };
-		9574D378F7A273DB28255AAA /* Pods-ToothpickTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToothpickTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ToothpickTests/Pods-ToothpickTests.debug.xcconfig"; sourceTree = "<group>"; };
-		99C43F7B191310D73DE3B70C /* Pods-Toothpick.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Toothpick.release.xcconfig"; path = "Pods/Target Support Files/Pods-Toothpick/Pods-Toothpick.release.xcconfig"; sourceTree = "<group>"; };
+		996627D229884B09E2958F57 /* Pods-ToothpickUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToothpickUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ToothpickUITests/Pods-ToothpickUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9E908C9DBAE24AF661D5EA60 /* Pods-ToothpickUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToothpickUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ToothpickUITests/Pods-ToothpickUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D5F0F07988DBF95FBC6CB182 /* Pods-Toothpick.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Toothpick.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Toothpick/Pods-Toothpick.debug.xcconfig"; sourceTree = "<group>"; };
+		D8E0E33F0DFF4DC40741462A /* Pods-Toothpick.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Toothpick.release.xcconfig"; path = "Pods/Target Support Files/Pods-Toothpick/Pods-Toothpick.release.xcconfig"; sourceTree = "<group>"; };
+		E70FE08D0FC565F7E704C01E /* Pods-ToothpickTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToothpickTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ToothpickTests/Pods-ToothpickTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89386D7921648B83004767CB /* ExternalAccessory.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +132,7 @@
 		89DDB146214AD5B800F4F2E0 /* Toothpick */ = {
 			isa = PBXGroup;
 			children = (
+				89386D7721648B7A004767CB /* Toothpick.entitlements */,
 				89DDB147214AD5B800F4F2E0 /* AppDelegate.swift */,
 				89DDB149214AD5B800F4F2E0 /* ViewController.swift */,
 				89DDB175214B1ADF00F4F2E0 /* page2.swift */,
@@ -170,6 +175,7 @@
 		8F513BD4B53FBB3408CC14EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				89386D7821648B83004767CB /* ExternalAccessory.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -177,12 +183,12 @@
 		9B158DD8610AFF513BC3713F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0C9F2D5A92E398F1AE8FB449 /* Pods-Toothpick.debug.xcconfig */,
-				99C43F7B191310D73DE3B70C /* Pods-Toothpick.release.xcconfig */,
-				9574D378F7A273DB28255AAA /* Pods-ToothpickTests.debug.xcconfig */,
-				1DA22C451B8C7F483B258C9E /* Pods-ToothpickTests.release.xcconfig */,
-				7009B3D59B81DB2B2DE5850C /* Pods-ToothpickUITests.debug.xcconfig */,
-				7BC8884EE49597CEE5A917C3 /* Pods-ToothpickUITests.release.xcconfig */,
+				D5F0F07988DBF95FBC6CB182 /* Pods-Toothpick.debug.xcconfig */,
+				D8E0E33F0DFF4DC40741462A /* Pods-Toothpick.release.xcconfig */,
+				E70FE08D0FC565F7E704C01E /* Pods-ToothpickTests.debug.xcconfig */,
+				570801F2EB2ADF9A07D5BF4B /* Pods-ToothpickTests.release.xcconfig */,
+				996627D229884B09E2958F57 /* Pods-ToothpickUITests.debug.xcconfig */,
+				9E908C9DBAE24AF661D5EA60 /* Pods-ToothpickUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -259,6 +265,14 @@
 				TargetAttributes = {
 					89DDB143214AD5B800F4F2E0 = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+							com.apple.WAC = {
+								enabled = 1;
+							};
+						};
 					};
 					89DDB157214AD5BA00F4F2E0 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -383,10 +397,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Toothpick/Pods-Toothpick-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlacePicker/Frameworks/GooglePlacePicker.framework/Resources/GooglePlacePicker.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlacePicker.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -581,9 +599,10 @@
 		};
 		89DDB16D214AD5BA00F4F2E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0C9F2D5A92E398F1AE8FB449 /* Pods-Toothpick.debug.xcconfig */;
+			baseConfigurationReference = D5F0F07988DBF95FBC6CB182 /* Pods-Toothpick.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Toothpick/Toothpick.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2Y8ATGR3J2;
 				INFOPLIST_FILE = Toothpick/Info.plist;
@@ -600,9 +619,10 @@
 		};
 		89DDB16E214AD5BA00F4F2E0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 99C43F7B191310D73DE3B70C /* Pods-Toothpick.release.xcconfig */;
+			baseConfigurationReference = D8E0E33F0DFF4DC40741462A /* Pods-Toothpick.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Toothpick/Toothpick.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2Y8ATGR3J2;
 				INFOPLIST_FILE = Toothpick/Info.plist;
@@ -619,7 +639,7 @@
 		};
 		89DDB170214AD5BA00F4F2E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9574D378F7A273DB28255AAA /* Pods-ToothpickTests.debug.xcconfig */;
+			baseConfigurationReference = E70FE08D0FC565F7E704C01E /* Pods-ToothpickTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -641,7 +661,7 @@
 		};
 		89DDB171214AD5BA00F4F2E0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1DA22C451B8C7F483B258C9E /* Pods-ToothpickTests.release.xcconfig */;
+			baseConfigurationReference = 570801F2EB2ADF9A07D5BF4B /* Pods-ToothpickTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -663,7 +683,7 @@
 		};
 		89DDB173214AD5BA00F4F2E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7009B3D59B81DB2B2DE5850C /* Pods-ToothpickUITests.debug.xcconfig */;
+			baseConfigurationReference = 996627D229884B09E2958F57 /* Pods-ToothpickUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -684,7 +704,7 @@
 		};
 		89DDB174214AD5BA00F4F2E0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7BC8884EE49597CEE5A917C3 /* Pods-ToothpickUITests.release.xcconfig */;
+			baseConfigurationReference = 9E908C9DBAE24AF661D5EA60 /* Pods-ToothpickUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

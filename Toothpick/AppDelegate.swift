@@ -7,6 +7,8 @@
 //
 import UIKit
 import GoogleMaps
+import GoogleMobileAds
+import GooglePlaces
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,7 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        GMSServices.provideAPIKey("AIzaSyA_H8taC6UAtNSis4OfdTIUX2Tmt37V2bY");
+        GMSPlacesClient.provideAPIKey("AIzaSyAsszS58jyvUp_-Q2HaBofbOIKGdarTMKc");
+        GMSServices.provideAPIKey("AIzaSyAsszS58jyvUp_-Q2HaBofbOIKGdarTMKc");
+        GADMobileAds.configure(withApplicationID: "ca-app-pub-3940256099942544/2934735716")
         return true
     }
 
