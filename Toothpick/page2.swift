@@ -15,6 +15,10 @@ class page2: UIViewController, UITextFieldDelegate {
     var placesClient: GMSPlacesClient!
     var locationManager = CLLocationManager()
     var myArray = [String]()
+    var querylen = 4
+    var myPlacesSoFar = [GooglePlaces.GMSPlace]()
+    var placeNames = [String : GooglePlaces.GMSPlace]()
+
 
 
     @IBOutlet weak var myOptions: UITableView!
@@ -39,13 +43,23 @@ class page2: UIViewController, UITextFieldDelegate {
         self.myOptions.isHidden = true;
         personOne.addTarget(self, action: #selector(searchRecords(textField:)), for: .editingChanged)
 
+
         // Do any additional setup after loading the view, typically from a nib.
     }
+
   
     
     @objc func searchRecords(textField:UITextField){
-        if personOne.text!.count >= 4{
-        placeAutocomplete()
+        if personOne.text!.count >= 4 {
+            if personOne.text!.count == 4{
+                placeAutocomplete()
+            }
+            if self.querylen <= personOne.text!.count{
+                filterArray()
+            } else {
+                placeAutocomplete()
+
+            }
         self.myOptions.reloadData()
         myOptions.isHidden = false;
         } else {
@@ -59,9 +73,7 @@ class page2: UIViewController, UITextFieldDelegate {
         {
             vc.distance = distance
             vc.numPeople = numPeople
-            vc.personOne = personOne.text!
-            print(distance)
-            print(numPeople)
+            vc.myPlacesSoFar = self.myPlacesSoFar
         }
     }
     
@@ -75,7 +87,17 @@ class page2: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func filterArray(){
+        var temp = [String]()
+        for restaurant in myArray{
+            if restaurant.contains(personOne.text!){
+                temp.append(restaurant)
+            }
+        }
+        self.myArray = temp
+        self.querylen = personOne.text!.count
+        
+    }
     func placeAutocomplete() {
         let filter = GMSAutocompleteFilter()
         filter.type = .establishment
@@ -85,14 +107,27 @@ class page2: UIViewController, UITextFieldDelegate {
                 return
             }
             if let results = results {
-                // SHOULD FIX THIS SO IT MAKES LESS CALLS TO GOOGLE API SINCE WE"RE THROTTLED
                 self.myArray = [String]()
                 for result in results {
                     self.myArray.append(result.attributedPrimaryText.string)
+                    self.placesClient.lookUpPlaceID(result.placeID!, callback: { (place, error) -> Void in
+                        if let error = error {
+                            print("lookup place id query error: \(error.localizedDescription)")
+                            return
+                        }
+                        guard let place = place else {
+                            print("No place details for \(result.placeID!)")
+                            return
+                        }
+                        self.placeNames[result.attributedPrimaryText.string] = place
+                    })
                 }
             }
         })
     }
+    
+    
+    
 }
 
 extension page2: UITableViewDelegate,UITableViewDataSource {
@@ -109,6 +144,23 @@ extension page2: UITableViewDelegate,UITableViewDataSource {
         // FIX ME INDEX OUT OF RANGE ERROR
         cell?.textLabel?.text = myArray[indexPath.row]
         return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let indexPath = tableView.indexPathForSelectedRow
+        
+        let cell = tableView.cellForRow(at: indexPath!)! as UITableViewCell
+        
+        if cell.textLabel?.text?.count == 0{
+            personOne.text = "Sorry, no matches were found please enter a new query"
+            myOptions.isHidden = true
+            return
+        } else {
+            personOne.text = cell.textLabel?.text
+            myOptions.isHidden = true
+            myPlacesSoFar.append(self.placeNames[(cell.textLabel?.text)!]!)
+            return
+        }
     }
     
     

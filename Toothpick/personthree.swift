@@ -7,21 +7,96 @@
 //
 
 import UIKit
+import GooglePlaces
 
 class personthree: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var myOptions: UITableView!
     @IBOutlet weak var personThreeText: UITextField!
-    var personOne : String!
     var distance: Int!
     var numPeople: Int!
-    var personTwo :String!
+    
+    var placesClient: GMSPlacesClient!
+    var locationManager = CLLocationManager()
+    var myArray = [String]()
+    var querylen = 4
+    var myPlacesSoFar = [GooglePlaces.GMSPlace]()
+    var placeNames = [String : GooglePlaces.GMSPlace]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.personThreeText.delegate = self
-
+        self.locationManager.delegate = self
+        self.placesClient = GMSPlacesClient.shared()
+        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.startUpdatingLocation()
+        self.myOptions.delegate = self
+        self.myOptions.dataSource = self
+        self.myOptions.isScrollEnabled = true;
+        self.myOptions.isHidden = true;
+        personThreeText.addTarget(self, action: #selector(searchRecords(textField:)), for: .editingChanged)
 
         // Do any additional setup after loading the view.
     }
+    
+    @objc func searchRecords(textField:UITextField){
+        if personThreeText.text!.count >= 4 {
+            if personThreeText.text!.count == 4{
+                placeAutocomplete()
+            }
+            if self.querylen <= personThreeText.text!.count{
+                filterArray()
+            } else {
+                placeAutocomplete()
+                
+            }
+            self.myOptions.reloadData()
+            myOptions.isHidden = false;
+        } else {
+            myOptions.isHidden = true;
+        }
+        
+    }
+    func filterArray(){
+        var temp = [String]()
+        for restaurant in myArray{
+            if restaurant.contains(personThreeText.text!){
+                temp.append(restaurant)
+            }
+        }
+        self.myArray = temp
+        self.querylen = personThreeText.text!.count
+        
+    }
+    func placeAutocomplete() {
+        let filter = GMSAutocompleteFilter()
+        filter.type = .establishment
+        placesClient.autocompleteQuery(personThreeText.text!, bounds: nil, filter: filter, callback: {(results, error) -> Void in
+            if let error = error {
+                print("Autocomplete error \(error)")
+                return
+            }
+            if let results = results {
+                // SHOULD FIX THIS SO IT MAKES LESS CALLS TO GOOGLE API SINCE WE"RE THROTTLED
+                self.myArray = [String]()
+                for result in results {
+                    self.myArray.append(result.attributedPrimaryText.string)
+                    self.placesClient.lookUpPlaceID(result.placeID!, callback: { (place, error) -> Void in
+                        if let error = error {
+                            print("lookup place id query error: \(error.localizedDescription)")
+                            return
+                        }
+                        guard let place = place else {
+                            print("No place details for \(result.placeID!)")
+                            return
+                        }
+                        self.placeNames[result.attributedPrimaryText.string] = place
+                    })
+                }
+            }
+        })
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {   //delegate method
         textField.resignFirstResponder()
         return true
@@ -36,7 +111,7 @@ class personthree: UIViewController, UITextFieldDelegate {
             
         } else {
             /*Use the Identifier you given in story Board*/
-            self.performSegue(withIdentifier: "personthreetoendscreen", sender: self)
+            self.performSegue(withIdentifier: "personthreetoend", sender: self)
         }
     }
     
@@ -44,21 +119,63 @@ class personthree: UIViewController, UITextFieldDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         if let vc = segue.destination as? landingpage
         {
             vc.distance = distance
             vc.numPeople = numPeople
-            vc.personOne = personOne
-            vc.personTwo = personTwo
-            vc.personThree = personThreeText.text!
+            vc.myPlacesSoFar = self.myPlacesSoFar
+
         } else if let vc = segue.destination as? personfour{
             vc.distance = distance
             vc.numPeople = numPeople
-            vc.personOne = personOne
-            vc.personTwo = personTwo
-            vc.personThree = personThreeText.text!
+            vc.myPlacesSoFar = self.myPlacesSoFar
+
+        }
+    }
+}
+    extension personthree: UITableViewDelegate,UITableViewDataSource {
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return myArray.count
+        }
+        
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let temp = "myArray"
+            var cell = tableView.dequeueReusableCell(withIdentifier: temp)
+            if cell == nil{
+                cell = UITableViewCell(style: .default, reuseIdentifier: temp)
+            }
+            // FIX ME INDEX OUT OF RANGE ERROR
+            cell?.textLabel?.text = myArray[indexPath.row]
+            return cell!
+        }
+        
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            let indexPath = tableView.indexPathForSelectedRow
+            
+            let cell = tableView.cellForRow(at: indexPath!)! as UITableViewCell
+            
+            if cell.textLabel?.text?.count == 0{
+                personThreeText.text = "Sorry, no matches were found please enter a new query"
+                myOptions.isHidden = true
+                return
+            } else {
+                personThreeText.text = cell.textLabel?.text
+                myPlacesSoFar.append(self.placeNames[(cell.textLabel?.text)!]!)
+
+                myOptions.isHidden = true
+                return
+            }
+        }
+        
+        
+    }
+    
+    extension personthree: CLLocationManagerDelegate {
+        func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+            guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         }
     }
 
@@ -72,4 +189,4 @@ class personthree: UIViewController, UITextFieldDelegate {
     }
     */
 
-}
+

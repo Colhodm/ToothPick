@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GooglePlaces
 
 class endpage: UIViewController {
     var done = false
@@ -15,40 +16,48 @@ class endpage: UIViewController {
     }
     @IBOutlet weak var restChoice: UILabel!
     @IBOutlet weak var googleMaps: UIButton!
-    var personOne : String!
     var distance: Int!
     var numPeople: Int!
-    var personTwo : String!
-    var personThree : String!
-    var personFour : String!
-    var personFive : String!
-    var personSix : String!
+    var myPlacesSoFar = [GooglePlaces.GMSPlace]()
+    var selectedPlace = 0
+
  
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        print("GOT HERE")
-        print(personTwo)
-        print(personOne)
         let number = arc4random_uniform(2)
         print(number)
         switch number {
             case 0:
-            restChoice.text = personOne
+            restChoice.text = myPlacesSoFar[0].name
+            selectedPlace = 0
             case 1:
-            restChoice.text = personTwo
+            restChoice.text = myPlacesSoFar[1].name
+            selectedPlace = 1
             case 2:
-            restChoice.text = personThree
+            restChoice.text = myPlacesSoFar[2].name
+            selectedPlace = 2
             case 3:
-            restChoice.text = personFour
+            restChoice.text = myPlacesSoFar[3].name
+            selectedPlace = 3
             case 4:
-            restChoice.text = personFive
+            restChoice.text = myPlacesSoFar[4].name
+            selectedPlace = 4
             case 5:
-            restChoice.text = personSix
+            restChoice.text = myPlacesSoFar[5].name
+            selectedPlace = 5
         default:
             print("stuff")
+        }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let vc = segue.destination as? MapViewController
+        {
+            vc.selectedPlace = myPlacesSoFar[selectedPlace]
+            
         }
     }
  

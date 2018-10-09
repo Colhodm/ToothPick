@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import GooglePlaces
 class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var firstBox: UITextField!
@@ -32,6 +32,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         {
             vc.numPeople = Int(firstBox.text!)!
             vc.distance = Int(secondBox.text!)!
+            vc.myPlacesSoFar = [GooglePlaces.GMSPlace]()
         }
     }
 

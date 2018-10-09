@@ -8,17 +8,13 @@
 
 import UIKit
 import GoogleMobileAds
-
+import GooglePlaces
 class landingpage: UIViewController {
     var bannerView: GADBannerView!
-    var personOne : String!
     var distance: Int!
     var numPeople: Int!
-    var personTwo : String!
-    var personThree : String!
-    var personFour : String!
-    var personFive : String!
-    var personSix : String!
+    var myPlacesSoFar = [GooglePlaces.GMSPlace]()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,12 +33,7 @@ class landingpage: UIViewController {
         {
             vc.distance = distance
             vc.numPeople = numPeople
-            vc.personOne = personOne
-            vc.personTwo = personTwo
-            vc.personThree = personThree
-            vc.personFour = personFour
-            vc.personFive = personFive
-            vc.personSix = personSix
+            vc.myPlacesSoFar = myPlacesSoFar
             
         }
     }

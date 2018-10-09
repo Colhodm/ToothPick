@@ -9,59 +9,94 @@
 
 import UIKit
 import GoogleMaps
+import GooglePlaces
 
 class MapViewController: UIViewController  {
         //var currentLocation: CLLocation?
         //var zoomLevel: Float = 15.0
     @IBOutlet weak var mapView: GMSMapView!
     
+    @IBOutlet weak var directions: UIButton!
     var locationManager = CLLocationManager()
+    var selectedPlace: GooglePlaces.GMSPlace?
     
-
+    @objc func pressButton(_ button: UIButton) {
+        let destinationid = selectedPlace?.placeID
+        let destinationaddy = selectedPlace?.formattedAddress
+        let myfinal = """
+            https://www.google.com/maps/dir/?api=1&
+            """
+        let temp = "destination_place_id=" + destinationid! + "&"
+        let another  =  "destination=" + destinationaddy!
+        let final = (myfinal+temp+another).replacingOccurrences(of: " ", with: "+")
+        let finalfinal = final.replacingOccurrences(of: ",", with: "%2C")
+        if (UIApplication.shared.canOpenURL(URL(string:finalfinal)!)) {
+            print(finalfinal)
+            UIApplication.shared.openURL(URL(string:
+                finalfinal)!)
+        } else {
+            print("Can't use comgooglemaps://");
+        }
+        
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        locationManager.delegate = self
+        // Think about how to fix map stuff like being able to zoom in
         locationManager.requestWhenInUseAuthorization()
-        print("here")
+        locationManager.delegate = self
+        let position = selectedPlace?.coordinate
+        let marker = GMSMarker(position: position!)
+        marker.title = selectedPlace?.name
+        marker.map = mapView
+        //Create a path
+        let path = GMSMutablePath()
+        
+        //for each point you need, add it to your path
+        path.add(position!)
+        print(locationManager.location)
+        if locationManager.location != nil{
+            path.add((locationManager.location?.coordinate)!)
+            mapView?.isMyLocationEnabled = true
+        }
+        //Update your mapView with path
+        let mapBounds = GMSCoordinateBounds(path: path)
+        let cameraUpdate = GMSCameraUpdate.fit(mapBounds)
+        mapView.moveCamera(cameraUpdate)
+        locationManager.startUpdatingLocation()
+        directions.addTarget(self, action: #selector(pressButton(_:)), for: .touchUpInside)
+
+
     }
-    }
+}
 
 
 
-    
+
     // Delegates to handle events for the location manager.
     extension MapViewController: CLLocationManagerDelegate {
-        // 2
-        func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-            // 3
-            guard status == .authorizedWhenInUse else {
-                return
-            }
-            // 4
-            locationManager.startUpdatingLocation()
-            print("case1")
-            
-            //5
-            mapView?.isMyLocationEnabled = true
-            mapView?.settings.myLocationButton = true
+        func locationManager(_ manager: CLLocationManager,
+                             didFailWithError error: Error){
+            print("I FAILED")
+            print(error)
+            return
         }
-        
-        // 6
         func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-            print("case2")
             guard let location = locations.first else {
                 return
             }
-            
-            // 7
-            print(mapView)
-            mapView?.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
-            
-            // 8
-            print("case3")
-            locationManager.stopUpdatingLocation()
+            let path = GMSMutablePath()
+            let position = selectedPlace?.coordinate
+            //for each point you need, add it to your path
+            path.add(position!)
+            path.add((locationManager.location?.coordinate)!)
+            mapView?.isMyLocationEnabled = true
+            //Update your mapView with path
+            let mapBounds = GMSCoordinateBounds(path: path)
+            let cameraUpdate = GMSCameraUpdate.fit(mapBounds)
+            mapView.moveCamera(cameraUpdate)
+            return
         }
-       
+
 }

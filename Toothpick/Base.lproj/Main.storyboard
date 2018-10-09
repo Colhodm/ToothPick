@@ -301,11 +301,17 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="A6t-ly-C8Z">
+                                <rect key="frame" x="107" y="348" width="161" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="PKT-3w-Wa2"/>
                     </view>
                     <connections>
+                        <outlet property="myOptions" destination="A6t-ly-C8Z" id="TE6-0w-FqE"/>
                         <outlet property="personTwos" destination="d9G-RO-bXm" id="fbV-ea-tvr"/>
                         <segue destination="WaP-gP-QSD" kind="show" identifier="persontwotopersonthree" id="Png-ha-KAb"/>
                         <segue destination="YSL-N1-DYt" kind="show" identifier="persontwotoendscreen" id="zHX-6x-7SE"/>
@@ -453,11 +459,17 @@
                                     <action selector="toTap:" destination="i6Z-ZB-1jy" eventType="touchUpInside" id="oEB-1F-kCx"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9m8-Lm-WtC">
+                                <rect key="frame" x="95" y="366" width="161" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="0.32515517980000003" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="tBr-GV-boM"/>
                     </view>
                     <connections>
+                        <outlet property="myOptions" destination="9m8-Lm-WtC" id="ovX-re-esm"/>
                         <outlet property="personFourText" destination="tz0-8Z-ANu" id="goE-1L-SHu"/>
                         <segue destination="YSL-N1-DYt" kind="show" identifier="personfourtoend" id="0ma-eg-QOP"/>
                         <segue destination="vIk-Q2-8YK" kind="show" identifier="personfourtopersonfive" id="GQH-e8-UeU"/>
@@ -509,7 +521,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9jd-4d-dgj">
-                                <rect key="frame" x="81" y="566" width="173" height="50"/>
+                                <rect key="frame" x="101" y="564" width="173" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Continue"/>
                                 <connections>
@@ -546,11 +558,17 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="H8Y-2B-1b4">
+                                <rect key="frame" x="107" y="359" width="161" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Zyy-eu-MsM"/>
                     </view>
                     <connections>
+                        <outlet property="myOptions" destination="H8Y-2B-1b4" id="FLq-ao-VYz"/>
                         <outlet property="personFiveText" destination="1Pa-Mt-yI9" id="u39-6b-HXC"/>
                         <segue destination="YSL-N1-DYt" kind="show" identifier="personfivetoend" id="saI-0B-lzF"/>
                         <segue destination="HJV-m8-Hfz" kind="show" identifier="personfivetopersonsix" id="Q6w-st-U72"/>
@@ -626,11 +644,17 @@
                                     <action selector="tapTo:" destination="HJV-m8-Hfz" eventType="touchUpInside" id="vxd-Xy-m0d"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Q8Z-3b-Lhm">
+                                <rect key="frame" x="107" y="350" width="161" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="0.93495756387710571" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Hks-qH-vek"/>
                     </view>
                     <connections>
+                        <outlet property="myOptions" destination="Q8Z-3b-Lhm" id="Z1b-ju-B8P"/>
                         <outlet property="personSixText" destination="7M5-gf-zGc" id="vHh-k6-9On"/>
                         <segue destination="YSL-N1-DYt" kind="show" identifier="personsixtoendscreen" id="9vC-zt-uQs"/>
                     </connections>
@@ -741,10 +765,10 @@
                                 <rect key="frame" x="83" y="559" width="212" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Click for directions!"/>
+                                <state key="normal" title="Click for the Map"/>
                                 <connections>
                                     <action selector="GoogleMapsActivation:" destination="7Fg-Fd-68x" eventType="touchUpInside" id="hso-jk-btc"/>
-                                    <segue destination="MRf-La-kp8" kind="show" id="4sw-ds-yrr"/>
+                                    <segue destination="MRf-La-kp8" kind="show" identifier="toMap" id="4sw-ds-yrr"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -769,10 +793,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xqv-8f-5Bq" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xqv-8f-5Bq" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="20" width="375" height="583"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C1M-DC-LI2">
+                                <rect key="frame" x="120" y="611" width="135" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Click for Directions!"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -784,12 +813,13 @@
                         <viewLayoutGuide key="safeArea" id="e0t-k9-dr9"/>
                     </view>
                     <connections>
+                        <outlet property="directions" destination="C1M-DC-LI2" id="lSh-cV-A7T"/>
                         <outlet property="mapView" destination="Xqv-8f-5Bq" id="Qrd-U5-UT5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vr0-6A-Gsa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6695" y="161"/>
+            <point key="canvasLocation" x="6693.6000000000004" y="160.56971514242881"/>
         </scene>
         <!--Page2-->
         <scene sceneID="Xeb-o7-DqZ">
@@ -958,11 +988,17 @@
                                     <action selector="tapToContinue:" destination="WaP-gP-QSD" eventType="touchUpInside" id="Kyn-U4-GKq"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vi7-vk-fqN">
+                                <rect key="frame" x="107" y="341" width="161" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="stq-D4-q3E"/>
                     </view>
                     <connections>
+                        <outlet property="myOptions" destination="Vi7-vk-fqN" id="6b0-zx-HEV"/>
                         <outlet property="personThreeText" destination="1AQ-Dg-P6O" id="eIE-qd-b4E"/>
                         <segue destination="i6Z-ZB-1jy" kind="show" identifier="personthreetopersonfour" id="JPf-mZ-1Qz"/>
                         <segue destination="YSL-N1-DYt" kind="show" identifier="personthreetoend" id="Snx-py-nBI"/>
